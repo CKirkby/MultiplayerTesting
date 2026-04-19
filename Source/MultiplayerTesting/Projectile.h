@@ -26,7 +26,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-	USphereComponent* SphereComponent = nullptr;
+	UStaticMeshComponent* MeshComponent;
 
 	UPROPERTY(EditDefaultsOnly, Category = Movement)
 	class UProjectileMovementComponent* MovementComponent;

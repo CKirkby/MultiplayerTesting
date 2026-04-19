@@ -28,6 +28,9 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float MyFloat = 32.0f;
+
 public:	
 	
 	UFUNCTION(Server, Reliable)

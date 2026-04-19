@@ -14,12 +14,12 @@ AProjectile::AProjectile()
 	PrimaryActorTick.bCanEverTick = true;
 
 	bReplicates = true;
-
-	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("MeshComponent"));
-	RootComponent = SphereComponent;
-
+	
+	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
+	RootComponent = MeshComponent;
+	
 	MovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("MovementComponent"));
-	MovementComponent->SetUpdatedComponent(SphereComponent);
+	MovementComponent->SetUpdatedComponent(MeshComponent);
 	MovementComponent->InitialSpeed = Speed;
 	MovementComponent->MaxSpeed = Speed;
 	MovementComponent->bRotationFollowsVelocity = true;

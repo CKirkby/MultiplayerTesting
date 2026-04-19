@@ -33,10 +33,9 @@ void UShootComponent::Server_OnShoot_Implementation()
 	{
 		FVector Location = FireLocation->GetComponentLocation();
 		FRotator Rotation = FireLocation->GetComponentRotation();
-		AActor* Projectile = GetWorld()->SpawnActor<AActor>(ProjectileClass, Location, Rotation);
-		if (Projectile)
+		if (GetWorld()->SpawnActor<AActor>(ProjectileClass, Location, Rotation))
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, TEXT("Successfully shot a projectile"));
+			// Do stuff
 		}
 	}
 }
